@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DJ Gear for Sale</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<link rel="stylesheet" href="https://use.typekit.net/alw6keh.css">
+<body>
+	<audio autoplay><source src="art/work_it.mp3"></source>
+	</audio>
+	
+	<canvas id="paper-canvas" resize></canvas>
+
+	<main>
+	<h2>
+	DJ Equipment Moving Sale<br></h2>
+
+	<h1>
+	Selling as a Set for $2,500<br>
+	Orig. Price for $5,000<br></h1>
+
+	<h2>
+	All Equipment is in Excellent Condition!<br>
+	Lightly-Used (10 weddings only)<br></h2>
+
+	<h4>PROFESSIONAL MIXERS<br></h4>
+	<h3>
+	<a href="https://www.numark.com/product/ns6" target="_blank">Numark NS6 4-deck DJ Mixer/Controller</a>
+	<br>
+	(used w/ Serato DJ Intro software &amp; a 4-deck version of VirtualDJ LE)
+	<br>
+	Odyssey DJ Controller Case for NS6 (all Black)	
+	<br>
+	<a href="https://www.sweetwater.com/store/detail/802--behringer-xenyx-802-mixer" target="_blank">Behringer 4-Channel Stereo Mixer (802 XENYX)</a></h3>
+
+	<h4>PORTABLE SPEAKERS<br></h4>
+	<h3>
+	<a href="http://www.jblpro.com/www/products/vintage/vintage-portable/eon500-powered-series/eon515xt#.W18YFthKhE5" target="_blank">2 &times; JBL Speakers (EON 515XT Powered Bi-Amped)</a>
+	<br>
+	(with JBL carry bags)<br>
+	2 &times; On-Stage Stands (All-Aluminum Speaker Stands with bags)</h3>
+
+	<h4>WIRELESS MICROPHONE<br></h4>
+	<h3>
+		<a href="https://www.sweetwater.com/store/detail/SLXHH58-H5--shure-slx24-sm58-handheld-wireless-system-h5-band" target="_blank" >Shure SLX24/SM58 Handheld Wireless System</a>
+		<br> 
+	Mic Stand</h3>
+
+	<h4>CABLES<br></h4>
+	<h3>
+	1 &times; American DJ 100&prime; DMX 3-pin Cable<br>
+	2 &times; 25&prime; Audio-Technica Premium Microphone Cable<br>
+	1 &times; 10&prime; Audio-Technica Premium Microphone Cable<br></h3>
+
+	<h4>EXTRA ESSENTIALS<br></h4>
+	<h3>
+	Surge &amp; Spike Protector: Monster Power Essential 750<br> 
+	<a href="https://www.sweetwater.com/store/detail/R2RT--rock-n-roller-r2rt-micro-multi-cart" target="_blank">  Wheeled Cart for Gear: MultiCart 8-in-1 Equipment Transporter</a>
+	<br>
+	(Micro, All-Terrain)<br></h3>
+
+	<h1>
+	<a href="mailto:1.nick.adam@gmail.com?subject=DJ Gear">Contact Nick</a> to purchase</h5>
+
+	<h3>Purchaser must pick up gear from Warwick, RI<br></h1>
+</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.10.2/paper-full.js"></script>
+	<script type="text/paperscript" canvas="paper-canvas">
+var droppedCircles = [];
+var path = new Path.Circle({
+	center: view.center,
+});
+var path2 = new Path.Circle({
+	center: view.center,
+	radius: 30,
+	fillColor: 'red'
+});
+var group = new Group([path, path2]);
+var destination = Point.random() * view.size;
+function onFrame(event) {
+	path2.fillColor.hue += 60;
+	for (var i=0; i<droppedCircles.length; i++){
+		droppedCircles[i].fillColor.hue += 20;
+	}
+}
+tool.onMouseMove = function(event) {
+    group.position = event.point;
+}
+tool.onMouseDown = function(event) {
+    var droppedCircle = new Path.Circle({
+      	center: event.point,
+		radius: 40,
+		fillColor: 'red'
+    });
+    droppedCircles.push(droppedCircle);
+}
+	</script>
+</body>
+</html>
