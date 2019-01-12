@@ -5,14 +5,12 @@
 
 body {
     background: linear-gradient(to bottom, white, red 80%);
-	background-repeat: no-repeat;
-    background-attachment: fixed;
-	background-size: 100%, 100%);
 	}
 
 canvas {
 	background-image: url(art/work_it.svg);
 	background-repeat: none
+	background-size: cover;
 	width: 100vw;
 	height: 100vh;
 	z-index: 0;
